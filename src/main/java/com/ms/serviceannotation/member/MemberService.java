@@ -1,8 +1,10 @@
 package com.ms.serviceannotation.member;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-@Service
+@Component
 public class MemberService {
     private final MemberRepository memberRepository;
 
@@ -14,6 +16,7 @@ public class MemberService {
         return this.memberRepository.save(member);
     }
 
+    @Transactional
     public Member updateAge(Long id, int age) {
         Member member = this.memberRepository.findOne(id);
         member.setAge(age);

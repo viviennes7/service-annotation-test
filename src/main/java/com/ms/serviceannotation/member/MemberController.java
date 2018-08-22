@@ -1,8 +1,10 @@
 package com.ms.serviceannotation.member;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Component
+@ResponseBody
 @RequestMapping("/member")
 public class MemberController {
     private final MemberService memberService;
